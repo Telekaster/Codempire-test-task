@@ -19,8 +19,6 @@ export const getCountriesAction = createAsyncThunk(
 export const getOneCountryAction = createAsyncThunk(
   "countries/getOne",
   async (country) => {
-    const today = new Date();
-    console.log(country.toLowerCase());
     const response = fetch(`${baseURL}/total/country/${country}`)
       .then((respose) => {
         return respose.json();
@@ -35,15 +33,13 @@ export const getOneCountryAction = createAsyncThunk(
 export const filterCountries = createAction(
   ("countries/filter",
   (countries) => {
-    return {
-      payload: countries,
-    };
+    return { payload: countries };
   })
 );
 
 export const modalAction = createAction(
-  ("modal/togle",
-  (payload) => {
-    return { payload: payload };
+  ("modal/toggle",
+  (boolean) => {
+    return { payload: boolean };
   })
 );

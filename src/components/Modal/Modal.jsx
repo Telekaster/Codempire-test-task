@@ -1,9 +1,10 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { modalAction } from "../../redux/actions";
 import styles from "./Modal.module.scss";
 
 export default function Modal() {
+  const dispatch = useDispatch();
   const information = useSelector((store) => store.getOneCountryReducer);
-  console.log(information);
 
   const getTotall = () => {
     let cases = 0;
@@ -16,14 +17,15 @@ export default function Modal() {
         cases += item.Confirmed;
         deaths += item.Deaths;
         recovered += item.Recovered;
-        console.log(item);
       });
     }
 
     return { name, cases, deaths, recovered };
   };
 
-  getTotall();
+  const modalClose = () => {
+    dispatch(modalAction(false));
+  };
 
   return (
     <div className={styles.popup}>
@@ -80,6 +82,9 @@ export default function Modal() {
             <p className={styles.numbers}>{getTotall().recovered}</p>
           </li>
         </ul>
+        <button className={styles.button} onClick={modalClose}>
+          OK
+        </button>
       </div>
     </div>
   );

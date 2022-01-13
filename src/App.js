@@ -3,7 +3,6 @@ import { useDispatch } from "react-redux";
 import { getCountriesAction } from "./redux/actions";
 import Header from "./components/Header";
 import Information from "./components/Information";
-// import Modal from "./components/Modal";
 
 export default function App() {
   const dispatch = useDispatch();

@@ -1,8 +1,7 @@
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { getOneCountryAction, modalAction } from "../../redux/actions";
 import styles from "./Information.module.scss";
 import Modal from "../Modal";
-import { getOneCountryAction, modalAction } from "../../redux/actions";
 
 export default function Information() {
   const dispatch = useDispatch();
@@ -15,14 +14,13 @@ export default function Information() {
 
   const modalStatus = useSelector((store) => store.modalReducer);
 
-  const modalHandler = () => {
+  const modalOpen = () => {
     dispatch(modalAction(true));
   };
 
   const getInformationByCountry = (country) => {
-    console.log("click");
     dispatch(getOneCountryAction(country));
-    modalHandler();
+    modalOpen();
   };
 
   let counter = 0;
@@ -45,7 +43,12 @@ export default function Information() {
                 <li className={styles.main_table__item} key={ID}>
                   <p className={styles.main_table__text_numbers}>{counter}</p>
                   <span className={styles.main_table__separator}></span>
-                  <p className={styles.main_table__text_countries}>{Country}</p>
+                  <p
+                    className={styles.main_table__text_countries}
+                    onClick={() => getInformationByCountry(Country)}
+                  >
+                    {Country}
+                  </p>
                   <span className={styles.main_table__separator}></span>
                   <p className={styles.main_table__text_cases}>
                     {TotalConfirmed}
