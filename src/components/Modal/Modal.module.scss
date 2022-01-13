@@ -1,0 +1,43 @@
+.popup {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+
+  background: rgba(19, 18, 18, 0.66);
+  top: 0;
+  left: 0;
+}
+
+.content_block {
+  max-width: 600px;
+  height: 400px;
+  background: #ffffff;
+  border-radius: 20px;
+  margin: auto;
+}
+
+.title {
+  padding-top: 20px;
+  padding-bottom: 38px;
+
+  text-align: center;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 56px;
+
+  color: #000000;
+}
+
+.list {
+}
+
+.text {
+}
+
+.numbers {
+}
