@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Codempire-test-task/static/css/main.e4d94caa.css",
-    "main.js": "/Codempire-test-task/static/js/main.1d2da857.js",
+    "main.js": "/Codempire-test-task/static/js/main.31a20cdd.js",
     "index.html": "/Codempire-test-task/index.html",
     "main.e4d94caa.css.map": "/Codempire-test-task/static/css/main.e4d94caa.css.map",
-    "main.1d2da857.js.map": "/Codempire-test-task/static/js/main.1d2da857.js.map"
+    "main.31a20cdd.js.map": "/Codempire-test-task/static/js/main.31a20cdd.js.map"
   },
   "entrypoints": [
     "static/css/main.e4d94caa.css",
-    "static/js/main.1d2da857.js"
+    "static/js/main.31a20cdd.js"
   ]
 }
