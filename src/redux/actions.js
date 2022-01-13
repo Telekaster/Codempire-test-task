@@ -1,9 +1,9 @@
-import { createAsyncThunk } from "@reduxjs/toolkit";
+import { createAction, createAsyncThunk } from "@reduxjs/toolkit";
 
 const baseURL = "https://api.covid19api.com";
 
 export const getCountriesAction = createAsyncThunk(
-  "get/countries",
+  "countries/get",
   async () => {
     const response = fetch(`${baseURL}/summary`)
       .then((respose) => {
@@ -14,4 +14,13 @@ export const getCountriesAction = createAsyncThunk(
       });
     return response;
   }
+);
+
+export const filterCountries = createAction(
+  ("countries/filter",
+  (countries) => {
+    return {
+      payload: countries,
+    };
+  })
 );

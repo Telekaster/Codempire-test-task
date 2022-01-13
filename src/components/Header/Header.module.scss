@@ -15,8 +15,11 @@
   color: #000000;
 }
 
-.input {
+.input__block {
   margin-left: auto;
+}
+
+.input {
   padding-left: 32px;
 
   max-width: 600px;
@@ -36,6 +39,7 @@
   font-size: 48px;
   line-height: 1.17;
   color: #b2b2b2;
+  position: relative;
 }
 
 .button {
@@ -43,7 +47,7 @@
   max-height: 40px;
 
   position: absolute;
-  transform: translate(1706px);
+  transform: translate(-59px, 20px);
 
   border: none;
   background: none;

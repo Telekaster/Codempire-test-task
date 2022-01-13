@@ -1,5 +1,5 @@
 import { combineReducers, createReducer } from "@reduxjs/toolkit";
-import { getCountriesAction } from "./actions";
+import { getCountriesAction, filterCountries } from "./actions";
 
 const allCountriesReducer = createReducer([], {
   [getCountriesAction.fulfilled]: (state, { payload }) => {
@@ -7,4 +7,13 @@ const allCountriesReducer = createReducer([], {
   },
 });
 
-export const reducers = combineReducers({ allCountriesReducer });
+const filteredCountriesReducer = createReducer([], {
+  [filterCountries]: (state, { payload }) => {
+    return (state = payload);
+  },
+});
+
+export const reducers = combineReducers({
+  allCountriesReducer,
+  filteredCountriesReducer,
+});
