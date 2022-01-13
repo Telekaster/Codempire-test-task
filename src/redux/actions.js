@@ -33,7 +33,8 @@ export const getOneCountryAction = createAsyncThunk(
 export const filterCountries = createAction(
   ("countries/filter",
   (countries) => {
-    return { payload: countries };
+    console.log(countries);
+    return { payload: [...countries] };
   })
 );
 

@@ -11,6 +11,7 @@ export default function Information() {
   const filter = useSelector((store) => {
     return store.filteredCountriesReducer;
   });
+  console.log(filter);
 
   const modalStatus = useSelector((store) => store.modalReducer);
 

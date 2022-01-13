@@ -5,7 +5,7 @@ import styles from "./Header.module.scss";
 import logo from "./img/logo.jpg";
 
 export default function Header() {
-  const [input, setInput] = useState();
+  const [input, setInput] = useState("");
   const dispatch = useDispatch();
   const allCountries = useSelector((store) => store.allCountriesReducer);
 
@@ -17,6 +17,7 @@ export default function Header() {
     const result = allCountries.filter((country) => {
       return country.Country.includes(input);
     });
+    console.log(result);
     dispatch(filterCountries(result));
   };
 

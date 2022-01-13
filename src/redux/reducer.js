@@ -13,13 +13,12 @@ const allCountriesReducer = createReducer([], {
 });
 
 const getOneCountryReducer = createReducer([], {
-  [getOneCountryAction.fulfilled]: (state, { payload }) => {
-    return (state = payload);
-  },
+  [getOneCountryAction.fulfilled]: (state, { payload }) => (state = payload),
 });
 
 const filteredCountriesReducer = createReducer([], {
   [filterCountries]: (state, { payload }) => {
+    console.log(payload);
     return (state = payload);
   },
 });
